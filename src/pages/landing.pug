@@ -1,0 +1,54 @@
+
+include ../mixins/icons
+
+.main
+  
+
+  canvas#confetti-canvas.confetti
+
+
+  #lucky-draw
+    .logo.d-flex.justify-content-between
+      //- img(src=require("@images/logo-kovayes.png"), alt="").logo__left
+      //- img(src=require("@images/img-update/FRAME QUAY SỐ_TITKE KV TÍCH YES - ĐÓN LỘC VÀNG.png"), alt="").logo__right
+
+    .title
+      //- img(src=require("@images/img-update/program_name.png")).w-100.h-100
+    .slot.d-flex.justify-content-center
+      .slot__outer.w-100.h-100
+        .slot__inner
+          .slot__shadow
+          #reel.reel
+
+      #sunburst.sunburst
+        img(src="~@images/sunburst.svg" alt="sunburst")
+
+    button#draw-button.solid-button.rounded-pill QUAY NGAY
+
+  #settings.settings
+    #settings-panel.settings__panel.bg-white
+      div.settings__panel__group
+        h1.settings__title Cấu hình
+        div.input-group
+          label.input-label(for="name-list") Danh sách
+          textarea.input-field.input-field--textarea(rows="8" placeholder="Thông tin từng người tham dự (chia theo dòng)" id="name-list")
+
+        div.input-group.input-group--2-column
+          label.input-label(for="remove-from-list") Xoá người trúng sau khi quay
+          label.input--switch
+            input(type="checkbox" checked="true" id="remove-from-list")
+            span.slider
+
+        div.input-group.input-group--2-column
+          label.input-label(for="enable-sound") Bật âm thanh chúc mừng
+          label.input--switch
+            input(type="checkbox" checked="true" id="enable-sound")
+            span.slider
+      div.settings__panel__group
+        button#settings-save.solid-button.solid-button Lưu
+        button#settings-close.solid-button.solid-button--danger Không lưu và thoát
+  .control-group
+    button#fullscreen-button.icon-button.icon-button--small
+      +svg-icon.red.big(svg-icon-name='fullscreen')
+    button#settings-button.icon-button.icon-button--small
+      +svg-icon.red.big(svg-icon-name='settings')

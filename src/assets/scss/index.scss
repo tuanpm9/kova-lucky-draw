@@ -1,0 +1,29 @@
+@import './colors';
+@import './breakpoints';
+@import './variables';
+@import './keyframes';
+@import './mixins';
+@import './base';
+@import './buttons';
+@import './inputs';
+@import './slot';
+
+#app {
+    background: url('../images/img-update/background.jpg');
+    background-size: cover;
+    background-position: 50% 16%;
+}
+.logo {
+    &__left {
+        width: 100px;
+        height: 100px;
+    }
+    
+    &__right {
+        width: 350px;
+        object-fit: scale-down;
+    }
+}
+.title {
+    width: 600px;
+}
