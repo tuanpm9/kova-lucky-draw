@@ -2,7 +2,6 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlVariablesPlugin = require('html-variables-plugin');
 
 module.exports = {
   entry: {
@@ -48,9 +47,9 @@ module.exports = {
       minify: {
         removeComments: true,
         collapseWhitespace: true
-      }
-    }),
-    new HtmlVariablesPlugin(process.env)
+      },
+      templateParameters: process.env
+    })
   ],
   resolve: {
     extensions: ['.js', '.ts'],
